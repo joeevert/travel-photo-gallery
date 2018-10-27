@@ -11,7 +11,6 @@ class GalleryList extends Component {
             <p>{pic.description}</p>
             <button>Like it!</button>
             <p>{pic.likes} people like this!</p>
-
         </div>)}
       </div>
     );
