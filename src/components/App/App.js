@@ -7,12 +7,6 @@ import GalleryList from '../GalleryList/GalleryList';
 class App extends Component {
 
   state = {
-    newPic: {
-      id: '',
-      path: '',
-      description: '',
-      likes: ''
-    },
     galleryList: [],
   }
 
@@ -26,6 +20,8 @@ class App extends Component {
       this.setState({
         galleryList: response.data
       })
+      console.log('this.state', this.state);
+      
     })
     .catch( error => {
       alert('error', error);
