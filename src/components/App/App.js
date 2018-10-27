@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList';
 
 class App extends Component {
 
@@ -40,9 +41,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
-        <br/>
-        <p>Gallery goes here</p>
-        {/* <img src="images/arizona.jpg"/> */}
+        <GalleryList galleryList={this.state.galleryList}/>
       </div>
     );
   }
