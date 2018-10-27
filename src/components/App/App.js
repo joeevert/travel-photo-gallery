@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 
+state = {
+  newPic: {
+    id: '',
+    title: '',
+    description: '',
+    path: ''
+  },
+  galleryList: [],
+}
+
+getPics = () => {
+  axios.get('/gallery').then( response => {
+    this.setState({
+      galleryList: response.data
+    })
+  }).catch( error => {
+    alert('Error', error);
+  })
+}
+
+
 class App extends Component {
   render() {
     return (
