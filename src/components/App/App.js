@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+// import GalleryItem from '../GalleryItem/GalleryItem';
 
 class App extends Component {
 
   state = {
-    newPic: {
-      id: '',
-      path: '',
-      description: '',
-      likes: ''
-    },
     galleryList: [],
   }
 
@@ -25,6 +20,8 @@ class App extends Component {
       this.setState({
         galleryList: response.data
       })
+      console.log('this.state', this.state);
+      
     })
     .catch( error => {
       alert('error', error);
