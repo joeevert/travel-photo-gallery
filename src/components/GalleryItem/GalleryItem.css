@@ -1,0 +1,11 @@
+.frame {
+    margin: 25px auto;
+    background-color: #bbb;
+    height: 250px;
+    width: 250px;
+  }
+  
+  .frame p {
+    margin: 0;
+    padding: 25px;
+  }

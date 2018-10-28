@@ -1,17 +1,59 @@
 import React, { Component } from 'react';
+import './GalleryItem.css';
+
 
 class GalleryItem extends Component {
+  
+  state = {
+    visible: true
+  }
+
+  toggleImage = () => { 
+    console.log('in toggleImage');
+    if (this.state.visible === false ) {
+      this.setState({
+        visible: true
+      }) 
+    }
+    else {
+       this.setState({
+         visible: false
+       })
+    }
+  }
 
   render() {
+    const visible = this.state.visible;
     return (
         <div>
-            <img src={this.props.item.path} alt={this.props.item.description}/>
-            <p>{this.props.item.description}</p>
-            <button>Like it!</button>
-            <p>{this.props.item.likes} people like this!</p>
+          {visible ? (
+            <div className="frame" onClick={this.toggleImage}>
+              <img src={this.props.item.path} alt={this.props.item.description}/>
+            </div>
+            // <button>Like it!</button>
+            // <p>{this.props.item.likes} people like this!</p>
+          ) : ( 
+            // <p onClick={this.toggleImage}/>{this.props.item.description}</p>
+            // <button>Like it!</button>
+            <div className="frame" onClick={this.toggleImage}>
+              <p onClick={this.toggleImage}>{this.props.item.description}</p>
+            </div>
+          )}
         </div>
-    );
+    )
   }
 }
-
 export default GalleryItem;
+
+// render() {
+//   const isLoggedIn = this.state.isLoggedIn;
+//   return (
+//     <div>
+//       {isLoggedIn ? (
+//         <LogoutButton onClick={this.handleLogoutClick} />
+//       ) : (
+//         <LoginButton onClick={this.handleLoginClick} />
+//       )}
+//     </div>
+//   );
+// }
