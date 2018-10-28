@@ -25,21 +25,22 @@ class GalleryItem extends Component {
   render() {
     const visible = this.state.visible;
     return (
-        <div>
+        <section className="picCard">
           {visible ? (
             <div className="frame" onClick={this.toggleImage}>
               <img src={this.props.item.path} alt={this.props.item.description}/>
             </div>
             // <button>Like it!</button>
-            // <p>{this.props.item.likes} people like this!</p>
           ) : ( 
-            // <p onClick={this.toggleImage}/>{this.props.item.description}</p>
-            // <button>Like it!</button>
             <div className="frame" onClick={this.toggleImage}>
               <p onClick={this.toggleImage}>{this.props.item.description}</p>
             </div>
           )}
-        </div>
+          <div className="likeButton">
+            <button>Like it!</button>
+            <p>{this.props.item.likes} people like this!</p>
+          </div>
+        </section>
     )
   }
 }

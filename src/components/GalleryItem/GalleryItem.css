@@ -1,5 +1,13 @@
+button {
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 5px;
+}
+
 .frame {
-    margin: 25px auto;
+    margin: 25px auto 0px;
     background-color: #bbb;
     height: 250px;
     width: 250px;
@@ -8,4 +16,19 @@
   .frame p {
     margin: 0;
     padding: 25px;
+  }
+
+  /* .picCard {
+    margin: 25px auto 15px;
+    background-color: #ddd;
+    height: 325px;
+    width: 250px;
+  } */
+
+  .likeButton {
+    margin: auto;
+    padding: 15px;
+    background-color: #ddd;
+    width: 220px;
+
   }
