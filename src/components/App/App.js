@@ -30,7 +30,7 @@ class App extends Component {
     })
   } // end getPics
 
-  likeClickHandler = (id) => {    
+  likeClickHandler = (id) => (event) => {    
     console.log('in likeClickHandler');
     console.log('id', id);
     
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Other People's Travel Pics</h1>
         </header>
         <GalleryList galleryList={this.state.galleryList} likeClickHandler={this.likeClickHandler}/>
       </div>
