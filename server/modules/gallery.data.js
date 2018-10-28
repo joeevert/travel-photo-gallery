@@ -7,4 +7,4 @@ const galleryItems = [
     { id: 6, path: 'images/utah.jpg', description: 'Photo of Utah.', likes: 0 }
 ];
 
-module.exports = galleryItems;
+// module.exports = galleryItems;
