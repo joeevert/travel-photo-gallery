@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './GalleryItem.css';
+
 
 class GalleryItem extends Component {
   
@@ -25,15 +27,17 @@ class GalleryItem extends Component {
     return (
         <div>
           {visible ? (
-            <img src={this.props.item.path} alt={this.props.item.description}
-              onClick={this.toggleImage}/>
+            <div className="frame" onClick={this.toggleImage}>
+              <img src={this.props.item.path} alt={this.props.item.description}/>
+            </div>
             // <button>Like it!</button>
             // <p>{this.props.item.likes} people like this!</p>
           ) : ( 
-            <img alt={this.props.item.description}
-              onClick={this.toggleImage}/> // need to set a up as a div or something to retain 250 x 250
+            // <p onClick={this.toggleImage}/>{this.props.item.description}</p>
             // <button>Like it!</button>
-            // <p>{this.props.item.likes} people like this!</p>
+            <div className="frame" onClick={this.toggleImage}>
+              <p onClick={this.toggleImage}>{this.props.item.description}</p>
+            </div>
           )}
         </div>
     )
