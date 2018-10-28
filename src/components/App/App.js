@@ -11,6 +11,8 @@ class App extends Component {
   }
 
   getPics = () => {
+    console.log('in getPics');
+    
     axios({
       method: 'GET',
       url: '/gallery'
@@ -24,9 +26,28 @@ class App extends Component {
       
     })
     .catch( error => {
-      alert('error', error);
+      alert('error getting pics', error);
     })
   } // end getPics
+
+  likeClickHandler = (id) => (event) => {    
+    console.log('in likeClickHandler');
+    console.log('id', id);
+    
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`,
+      data: {
+        likes: this.likes
+      }
+    })
+    .then( response => {
+      this.getPics();
+    })
+    .catch ( error => {
+      alert('error adding like', error);
+    })
+  } // end likeClickHandler
 
   componentDidMount() {
     this.getPics();
@@ -36,9 +57,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Other People's Travel Pics</h1>
         </header>
-        <GalleryList galleryList={this.state.galleryList}/>
+        <GalleryList galleryList={this.state.galleryList} likeClickHandler={this.likeClickHandler}/>
       </div>
     );
   }

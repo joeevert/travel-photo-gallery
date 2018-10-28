@@ -1,33 +1,11 @@
-button {
-  margin-bottom: 0px;
-}
-
-p {
-  margin: 5px;
-}
-
 .frame {
-    margin: 25px auto 0px;
-    background-color: #bbb;
-    height: 250px;
-    width: 250px;
-  }
+  margin: 25px auto 0px;
+  background-color: #bbb;
+  height: 250px;
+  width: 250px;
+}
   
-  .frame p {
-    margin: 0;
-    padding: 25px;
-  }
-
-  .picCard {
-    display: inline-block;
-    margin: 25px;
-    /* float: right; */
-  }
-
-  .likeButton {
-    margin: auto;
-    padding: 15px;
-    background-color: #ddd;
-    width: 220px;
-
-  }
+.frame p {
+  margin: 0;
+  padding: 25px;
+}
