@@ -18,12 +18,11 @@ p {
     padding: 25px;
   }
 
-  /* .picCard {
-    margin: 25px auto 15px;
-    background-color: #ddd;
-    height: 325px;
-    width: 250px;
-  } */
+  .picCard {
+    display: inline-block;
+    margin: 25px;
+    /* float: right; */
+  }
 
   .likeButton {
     margin: auto;
