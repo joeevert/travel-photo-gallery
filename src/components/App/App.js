@@ -36,7 +36,7 @@ class App extends Component {
     
     axios({
       method: 'PUT',
-      url: '/gallery/like/:id',
+      url: `/gallery/like/${id}`,
       data: {
         likes: this.likes
       }

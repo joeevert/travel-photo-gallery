@@ -29,7 +29,6 @@ class GalleryItem extends Component {
             <div className="frame" onClick={this.toggleImage}>
               <img src={this.props.item.path} alt={this.props.item.description}/>
             </div>
-            // <button>Like it!</button>
           ) : ( 
             <div className="frame" onClick={this.toggleImage}>
               <p onClick={this.toggleImage}>{this.props.item.description}</p>
