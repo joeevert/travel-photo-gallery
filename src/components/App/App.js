@@ -2,31 +2,50 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
-// import GalleryForm from '../GalleryForm/GalleryForm';
+import GalleryForm from '../GalleryForm/GalleryForm';
 
 class App extends Component {
 
   state = {
-    // newPic: {
-    //   path: '',
-    //   description: '',
-    // },
+    newPic: {
+      path: '',
+      description: ''
+    },
     galleryList: [],
   }
 
-  // handleChangeFor = (propertyName) => {
-  //   console.log('in handleChangeFor');
-    
-  //   return (event) => {
-  //     this.setState( {
-  //       newPic: {
-  //         ...this.state.newPic,
-  //         [propertyName]: event.target.value
-  //       }
-  //     } );
-  //   }
-  // }
- 
+  handleChangeFor = (propertyName) => {
+    return (event) => {
+      this.setState({
+        newPic: {
+          ...this.state.newPic,
+          [propertyName]: event.target.value
+        }
+      })
+    }
+  }
+
+  addPic = (event) => {
+    event.preventDefault();
+    axios({
+      method: 'POST',
+      url: '/gallery',
+      data: this.state.newPic
+    })
+    .then( response => {
+      this.getPics();
+      this.setState({
+        newPic: {
+          path: '',
+          description: ''
+        }
+      })
+    })
+    .catch( error => {
+      alert('error adding pic', error);
+    })
+  }
+
   getPics = () => {
     console.log('in getPics');
     
@@ -50,46 +69,21 @@ class App extends Component {
   likeClickHandler = (id) => (event) => {    
     console.log('in likeClickHandler');
     console.log('id', id);
-
+    
     axios({
       method: 'PUT',
-      path: `/gallery/like/${id}`,
+      url: `/gallery/like/${id}`,
       data: {
         likes: this.likes
       }
     })
     .then( response => {
-      console.log('response', response);
-      
       this.getPics();
     })
     .catch ( error => {
       alert('error adding like', error);
     })
   } // end likeClickHandler
-
-  // addPic = (event) => {
-  //   console.log('in addPic');
-  //   event.preventDefault();
-  //   console.log(this.newPic);
-    
-  //   axios({
-  //     method: 'POST',
-  //     url: '/gallery',
-  //     data: this.state.newPic
-  //   }).then((response) => {
-  //     console.log('Response.data:', response.data);
-  //     this.getPics();
-  //     this.setState({
-  //       newPic: {
-  //         path: '',
-  //         description: '',
-  //       }
-  //     })
-  //   }).catch((error) => {
-  //     alert('error adding pic', error);
-  //   })
-  // } // end addPic
 
   componentDidMount() {
     this.getPics();
@@ -101,12 +95,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Other People's Travel Pics</h1>
         </header>
-        {/* <section>
-          <h2>Add Picture</h2>
-          <GalleryForm newPic={this.state.newPic}
-            handleChangeFor={this.handleChangeFor} 
-            handleSubmit={this.addPic}/>
-       </section> */}
+        <h3>Add Pictures</h3>
+        <GalleryForm newPic={this.state.newPic}
+          handleChangeFor={this.handleChangeFor}
+          handleSubmit={this.addPic}/>
         <GalleryList galleryList={this.state.galleryList} likeClickHandler={this.likeClickHandler}/>
       </div>
     );
