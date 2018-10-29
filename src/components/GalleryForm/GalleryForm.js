@@ -8,10 +8,10 @@ class GalleryForm extends Component {
       <form onSubmit={this.props.handleSubmit}>
         <label>Picture Link</label>
         <input value={this.props.newPic.path}
-           onChange={this.props.handleChangeFor('path')} />
+           onChange={this.props.handleChangeFor('path')} required/>
         <label>Description</label>
         <input value={this.props.newPic.description}
-           onChange={this.props.handleChangeFor('description')} />
+           onChange={this.props.handleChangeFor('description')} required/>
         <input type="submit" value="Add Picture" />
       </form>
     );
