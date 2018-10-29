@@ -7,18 +7,25 @@ class GalleryItem extends Component {
     visible: true
   }
 
+  // toggleImage = () => { 
+  //   console.log('in toggleImage');
+  //   if (this.state.visible === false ) {
+  //     this.setState({
+  //       visible: true
+  //     }) 
+  //   }
+  //   else {
+  //      this.setState({
+  //        visible: false
+  //      })
+  //   }
+  // }
+
   toggleImage = () => { 
     console.log('in toggleImage');
-    if (this.state.visible === false ) {
-      this.setState({
-        visible: true
-      }) 
-    }
-    else {
-       this.setState({
-         visible: false
-       })
-    }
+    this.setState({
+      visible: !this.state.visible
+    })
   }
 
   render() {
