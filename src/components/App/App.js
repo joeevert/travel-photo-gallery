@@ -86,15 +86,16 @@ class App extends Component {
   } // end likeClickHandler
 
   deletePic = (id) => {
+    console.log('in deletePic');
+    
     axios({
       method: 'DELETE',
       url: `/gallery/${id}`
       })
-      .then( function (response) {
-        console.log(response);
+      .then( response => {
         this.getPics();
       })
-      .catch( function (error) {
+      .catch( error => {
         console.log(error);        
       })
   } // end deletePic
@@ -113,7 +114,10 @@ class App extends Component {
         <GalleryForm newPic={this.state.newPic}
           handleChangeFor={this.handleChangeFor}
           handleSubmit={this.addPic}/>
-        <GalleryList galleryList={this.state.galleryList} likeClickHandler={this.likeClickHandler}/>
+        <GalleryList
+          galleryList={this.state.galleryList}
+          likeClickHandler={this.likeClickHandler}
+          deletePic={this.deletePic}/>
       </div>
     );
   }
