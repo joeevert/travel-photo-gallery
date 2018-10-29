@@ -85,9 +85,23 @@ class App extends Component {
     })
   } // end likeClickHandler
 
+  deletePic = (id) => {
+    axios({
+      method: 'DELETE',
+      url: `/gallery/${id}`
+      })
+      .then( function (response) {
+        console.log(response);
+        this.getPics();
+      })
+      .catch( function (error) {
+        console.log(error);        
+      })
+  } // end deletePic
+
   componentDidMount() {
     this.getPics();
-  }
+  } // end componentDidMount
 
   render() {
     return (
