@@ -21,4 +21,9 @@ img {
   margin: auto;
   height: 250px;
   width: 250px;
+  object-fit: cover;
 }
+
+/* img {
+  object-fit: cover;
+} */
