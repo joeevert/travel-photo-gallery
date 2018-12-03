@@ -1,66 +1,88 @@
-# React - Gallery of My Life
+# Other People's Travel Pics
 
-Before you get started make sure to look through the code that has been provided. Server side code to retrieve data (`GET`) and like a photo (`PUT`) have been provided for you. For practice, we recommend testing out these routes in Postman. You should not need to modify these routes for base mode.
+This is a photo gallery app that allows user's to add, like, or delete photos. The user can also add a description to the photo that is viewed by clicking on a photo.
 
-### Setup
+Link to Project: https://agile-bastion-15350.herokuapp.com/
 
-There is no database component to base mode. All data is stored in an array on the server. Before you get started, add a few images to the `public/images` folder and modify the `server/modules/data.js` to include an `id`, `title`, `description` and `path for` each of your images. Each `id` should be a unique number (e.g. 1, 2, 3...).
+## Built With
 
-Running the server code requires `nodemon`. If you don't already have `nodemon`, install it globally with `npm install nodemon --global`.
+React
+CSS
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+Before you get started, make sure you have the following software installed:
+
+- [Node.js](https://nodejs.org/en/)
+- [PostrgeSQL](https://www.postgresql.org/)
+- [Nodemon](https://nodemon.io/)
+
+### Create database
+
+1. Create a new database called `travel-gallery`
+2. Then create a table called `galleryitems`
+3. Then add some images to the gallery
+
+```SQL
+CREATE DATABASE travel-gallery;
+
+CREATE TABLE galleryitems (
+    id SERIAL PRIMARY KEY,
+	path VARCHAR (250),
+	description VARCHAR (250),
+    likes INTEGER DEFAULT 0
+);
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/cambodia.jpg', 'Photo of a Cambodia.');
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/croatia.jpg', 'Photo of a Croatia.');
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/peru.jpg', 'Photo of a Peru.');
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/italy.jpg', 'Photo of a Italy.');
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/myanmar.jpg', 'Photo of a Myanmar.');
+
+INSERT INTO galleryitems (path, description)
+VALUES ('images/utah.jpg', 'Photo of a Utah.');
 ```
-npm install
-npm run server
-```
 
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+### Installing
 
-```
-npm run client
-```
+Steps to get the development environment running.
 
-Between the server and client, you'll need two terminal tabs! Because we're using `nodemon`, both our client side and server side will automatically spin back up when changes are made!
+1. Download this project.
+2. Run `npm install`
+3. Start PostgreSQL if not running already by using `brew services start postgresql`
+4. Run `npm server`
+5. `cmd + t` to open a new terminal window and Run `npm run client`
+6. Navigate to `localhost:3000`
 
-## Git Branching
-For each `feature` of your application, you will need to make a branch, work on the branch, and then merge it into master with `git merge --no-ff`. In the Base Mode section, each of the tasks has an associated branch name. These are suggested branches and order. Feel free to work on the features in any order you like. You should be making branches for whatever feature you are working on.
+### Completed Features
 
-
-## BASE MODE
-
-- `feature-get-gallery` 
-    - Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
-- `feature-component-gallery-list` 
-    - Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
-    - Break apart the list of gallery data
-- `feature-component-gallery-item` 
-    - Create a new **component** called `GalleryItem.js` and pass it the individual gallery item via `props`. 
-    - Display all of the images on the screen.
-- `feature-image-swap` 
-    - Swap the image with the description on click. Research [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
-- `feature-like-counter` 
-    - Display the number likes for each item and include a like button.
-    - When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-    - Update the gallery each time a like button is clicked.
-
-### Wireframes
-
-> NOTE: Images don't need to be 100px x 100px but it will be easier if the are all the same dimensions.
-
-![mockup one](wireframes/first-mockup.png)
-
-![mockup two](wireframes/second-mockup.png)
-
-## STRETCH GOALS
-
-**Do not start on stretch goals until ALL of base mode is complete. Some of these will require additional research.**
+- [x] Feature `get-gallery`
+    - Used `axios` to retrieve data from the galleryitems table.
+- [x] Feature `gallery-list`
+    - GalleryList is a component that maps through the data from the galleryitems table.
+- [x] Feature `gallery-item`
+    - Component that is passed individual phots through props.
+- [x] Feature `image-swap`
+    - Conditionally renders a photo or description.
+- [x] Feature `like-counter`
+    - Onclick updates a photo's like count.
+- [x] Feature `add-photos`
+    - Created a form that allows user's to add to their gallery.
 
 
-- Move the data into a database (postgresql)
-- Add a form (new **component**) that allows a user to POST a new gallery item
-  - Client side form (use absolute URL for images)
-  - Server side route for posting an image
-- Ability to delete a gallery item
-- Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
-- Implement [uppy](https://uppy.io/) for image upload 
+### Features To Add
 
-> NOTE: The above stretch goals are intended to be completed in order.
+- [ ] Material UI for styling

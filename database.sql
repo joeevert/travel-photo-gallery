@@ -1,4 +1,7 @@
--- table for database travel-gallery
+--create a new database called 'travel-gallery'
+CREATE DATABASE travel-gallery;
+
+--create galleryitems table
 CREATE TABLE galleryitems (
     id SERIAL PRIMARY KEY,
 	path VARCHAR (250),
@@ -6,7 +9,7 @@ CREATE TABLE galleryitems (
     likes INTEGER DEFAULT 0
 );
 
--- test items
+--test images
 INSERT INTO galleryitems (path, description)
 VALUES ('images/cambodia.jpg', 'Photo of a Cambodia.');
 
@@ -24,5 +27,3 @@ VALUES ('images/myanmar.jpg', 'Photo of a Myanmar.');
 
 INSERT INTO galleryitems (path, description)
 VALUES ('images/utah.jpg', 'Photo of a Utah.');
-
-UPDATE galleryitems SET likes=likes+1 WHERE id=1;
