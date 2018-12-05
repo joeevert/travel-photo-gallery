@@ -6,7 +6,9 @@ Link to Project: https://agile-bastion-15350.herokuapp.com/
 
 ## Built With
 
+Javascript
 React
+Node.js
 CSS
 
 ## Getting Started
