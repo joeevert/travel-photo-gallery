@@ -24,10 +24,10 @@ class GalleryList extends Component {
             {this.props.galleryList.map( pic =>
             <div key={pic.id} className="picCard">
               <GalleryItem item={pic}/>
-              <div className="likeButton">
-                <button onClick={this.props.likeClickHandler(pic.id)}>Like it!</button>
-                <p>{this.likesStatement(pic.likes)}</p>
-                <button onClick={() => this.props.deletePic(pic.id)}>Delete</button>
+              <div className="likeButtonDiv">
+                <button className="likeButton" onClick={this.props.likeClickHandler(pic.id)}>Like it!</button>
+                <h3>{this.likesStatement(pic.likes)}</h3>
+                <button className="deleteButton" onClick={() => this.props.deletePic(pic.id)}>Delete</button>
               </div>
             </div>
             )}

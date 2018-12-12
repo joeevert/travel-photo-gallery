@@ -7,20 +7,6 @@ class GalleryItem extends Component {
     visible: true
   }
 
-  // toggleImage = () => { 
-  //   console.log('in toggleImage');
-  //   if (this.state.visible === false ) {
-  //     this.setState({
-  //       visible: true
-  //     }) 
-  //   }
-  //   else {
-  //      this.setState({
-  //        visible: false
-  //      })
-  //   }
-  // }
-
   toggleImage = () => { 
     console.log('in toggleImage');
     this.setState({
@@ -46,16 +32,3 @@ class GalleryItem extends Component {
   }
 }
 export default GalleryItem;
-
-// render() {
-//   const isLoggedIn = this.state.isLoggedIn;
-//   return (
-//     <div>
-//       {isLoggedIn ? (
-//         <LogoutButton onClick={this.handleLogoutClick} />
-//       ) : (
-//         <LoginButton onClick={this.handleLoginClick} />
-//       )}
-//     </div>
-//   );
-// }

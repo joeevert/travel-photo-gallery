@@ -1,5 +1,23 @@
-button {
-    margin-bottom: 0px;
+.likeButton {
+    background-color: #222;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
 }
   
 p {
@@ -11,7 +29,7 @@ p {
     margin: 25px;
   }
 
-.likeButton {
+.likeButtonDiv {
     margin: auto;
     padding: 15px;
     background-color: #ddd;
