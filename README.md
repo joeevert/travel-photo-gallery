@@ -2,7 +2,7 @@
 
 This is a photo gallery app that allows user's to add, like, or delete photos. The user can also add a description to the photo that is viewed by clicking on a photo.
 
-Link to Project: https://agile-bastion-15350.herokuapp.com/
+Link to Project: https://evert-travel-photo-gallery.herokuapp.com/
 
 ## Built With
 
