@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import Header from '../Header/Header';
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 
@@ -107,10 +108,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Other People's Travel Pics</h1>
-        </header>
-        <h3>Add Pictures</h3>
+        <Header />
         <GalleryForm newPic={this.state.newPic}
           handleChangeFor={this.handleChangeFor}
           handleSubmit={this.addPic}/>

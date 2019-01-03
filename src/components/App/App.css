@@ -2,28 +2,9 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 70px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 img {
   margin: auto;
   height: 250px;
   width: 250px;
   object-fit: cover;
 }
-
-/* img {
-  object-fit: cover;
-} */
